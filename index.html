@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Choose Your Mama</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="app-shell">
+    <section class="setup-screen" id="setupScreen" aria-labelledby="setupTitle">
+      <div class="sparkle sparkle-one"></div>
+      <div class="sparkle sparkle-two"></div>
+      <p class="eyebrow">A tiny surprise is loading...</p>
+      <h1 id="setupTitle">Who is your<br><span>favourite <span id="setupWordPreview">mama</span>?</span></h1>
+      <p class="intro">Make a tiny surprise link with one name that cannot escape.</p>
+      <form id="setupForm" class="setup-form">
+        <label for="recipient">For whom?</label>
+        <input id="recipient" name="recipient" type="text" placeholder="e.g. Riddhii" required maxlength="24">
+        <label for="movingNames">Names that will fly away</label>
+        <input id="movingNames" name="movingNames" type="text" placeholder="e.g. Nani, Aunty, Mumma" required>
+        <label for="correctName">Non-moving name <small>(the right answer)</small></label>
+        <input id="correctName" name="correctName" type="text" placeholder="e.g. Mama" required maxlength="24">
+        <label for="titleWord">Word to guess <small>(replaces "Mama" in the question)</small></label>
+        <input id="titleWord" name="titleWord" type="text" placeholder="e.g. Mama" maxlength="24">
+        <button class="pixel-button" type="submit">Create her link <span aria-hidden="true">&#8594;</span></button>
+      </form>
+      <div class="link-result is-hidden" id="linkResult">
+        <label for="shareLink">Her special link</label>
+        <div class="link-row"><input id="shareLink" readonly><button class="copy-button" id="copyLink" type="button">Copy</button></div>
+        <p id="copyStatus" class="copy-status" aria-live="polite"></p>
+      </div>
+      <p class="asset-note">Add your picture to <code>assets/background.png</code><br>and funny GIF to <code>assets/win.gif</code>.</p>
+    </section>
+
+    <section class="game-screen is-hidden" id="gameScreen" aria-labelledby="gameTitle">
+      <header class="game-header">
+        <div class="brand-mark"><span id="brandWord">MAMA</span><br><span>QUEST</span></div>
+        <div class="heart-meter" aria-label="Three hearts remaining"><span>&hearts;</span><span>&hearts;</span><span>&hearts;</span></div>
+      </header>
+      <div class="game-copy">
+        <h2 id="gameTitle">Who is <span id="recipientName">your</span>'s <strong>favourite <span id="titleWordDisplay">mama</span>?</strong></h2>
+      </div>
+      <div class="choice-area" id="choiceArea" aria-live="polite"></div>
+      <div class="comic-popups" id="comicPopups" aria-hidden="true"></div>
+      <div class="ground"><div class="grass"></div><div class="soil"></div></div>
+      <button class="reset-button" id="resetButton" type="button">&#8592; Set up again</button>
+    </section>
+  </main>
+  <div class="celebration is-hidden" id="celebration" role="dialog" aria-modal="true" aria-labelledby="winTitle">
+    <div class="confetti confetti-a"></div><div class="confetti confetti-b"></div><div class="confetti confetti-c"></div><div class="confetti confetti-d"></div><div class="confetti confetti-e"></div>
+    <div class="win-card">
+      <img class="win-gif" src="assets/win.gif" alt="Funny celebration">
+      <p class="eyebrow">QUEST COMPLETE</p>
+      <h2 id="winTitle">You picked<br><span id="winnerName">Mama</span>!</h2>
+      <p class="win-message" id="winMessage">Correct answer. Big hugs unlocked.</p>
+      <button class="pixel-button" id="playAgain" type="button">Play again <span aria-hidden="true">&#8635;</span></button>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
