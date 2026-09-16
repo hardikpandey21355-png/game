@@ -18,7 +18,7 @@ const copyStatus = document.querySelector('#copyStatus');
 const comicLayer = document.querySelector('#comicPopups');
 
 let currentRecipient = '';
-const DEFAULT_WORD = 'Mama';
+const DEFAULT_WORD = 'Didi';
 
 const COMIC_COLORS = ['#ffd75a', '#b6f1d0', '#d9c6ff', '#ffffff'];
 
@@ -136,9 +136,9 @@ function makeChoice(name, isMoving) {
 
 const WIN_LINES = [
   'Correct answer. Big hugs unlocked.',
-  'Mama has been located successfully!',
+  'Didi has been located successfully!',
   'Achievement unlocked: World\'s Best Guesser.',
-  'Confirmed. 100% certified mama.',
+  'Confirmed. 100% certified Didi.',
   'Caught her fair and square!',
   'Level complete. Hugs loading...'
 ];
@@ -177,7 +177,7 @@ function startGame(recipient, movingNames, correctName, titleWord) {
 
 if (titleWordInput && setupWordPreview) {
   titleWordInput.addEventListener('input', () => {
-    setupWordPreview.textContent = titleWordInput.value.trim() || 'mama';
+    setupWordPreview.textContent = titleWordInput.value.trim() || DEFAULT_WORD.toLowerCase();
   });
 }
 
